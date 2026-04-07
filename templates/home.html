@@ -9,6 +9,22 @@
 <body>
     <h1>Grafo:</h1>
     <div id="grafo" style="width: 600px; height: 400px; border: 1px solid black;"></div>
+    <div style="display: flex; gap: 16px; margin-top: 16px;">
+
+    <fieldset>
+      <legend>Nó</legend>
+      <input type="text" id="novoNo" placeholder="Nome do nó">
+      <button id="btn-no">Adicionar nó</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Aresta</legend>
+      <input type="text" id="Aresta-o" placeholder="Origem">
+      <input type="text" id="Aresta-d" placeholder="Destino">
+      <button id="btn-aresta">Adicionar aresta</button>
+    </fieldset>
+
+  </div>
 
 <script src="{{ url_for('static', filename='../static/js/home.js') }}"></script
 </body>
