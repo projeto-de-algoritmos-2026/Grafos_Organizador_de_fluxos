@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grafo</title>
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafo</title>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 </head>
+
 <body>
-    <h1>Grafo:</h1>
-    <div id="grafo" style="width: 600px; height: 400px; border: 1px solid black;"></div>
-    <div style="display: flex; gap: 16px; margin-top: 16px;">
+  <h1>Grafo:</h1>
+  <div id="grafo" style="width: 600px; height: 400px; border: 1px solid black;"></div>
+  <div style="display: flex; gap: 16px; margin-top: 16px;">
 
     <fieldset>
       <legend>Nó</legend>
@@ -19,13 +21,14 @@
 
     <fieldset>
       <legend>Aresta</legend>
-      <input type="text" id="Aresta-o" placeholder="Origem">
-      <input type="text" id="Aresta-d" placeholder="Destino">
+      <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
+      <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
+
       <button id="btn-aresta">Adicionar aresta</button>
     </fieldset>
-
+    <datalist id="lista-nos"></datalist>
   </div>
 
-<script src="{{ url_for('static', filename='../static/js/home.js') }}"></script
+  <script src="{{ url_for('static', filename='../static/js/home.js') }}"></script
 </body>
 </html>

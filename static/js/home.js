@@ -15,9 +15,21 @@ botaoAresta.addEventListener('click', () => {
     adicionarAresta(origemAresta.value, destinoAresta.value)
 })
 
+function atualizarListaNos() {
+    const dataList = document.getElementById("lista-nos");
+    dataList.innerHTML = "";
+    grafo01.nodes.forEach(no => {
+        const campo = document.createElement("option")
+        campo.value = no.label;
+        dataList.appendChild(campo)
+        
+    });
+}
+
 async function init() {
     await carregarGrafo();
     iniciarGrafo(grafo01);
+    atualizarListaNos();
 }
 
 async function carregarGrafo() {
@@ -48,6 +60,7 @@ function adicionarNo(id, label) {
     grafo01.nodes.push({ id, label });
     console.log(`nó ${id} ,criado com sucesso`)
     salvarGrafo()
+    atualizarListaNos()
 }
 
 
@@ -56,7 +69,7 @@ function adicionarAresta(from, to) {
     const aresta = { from, to };
     edges.add(aresta);
     grafo01.edges.push(aresta);
-     console.log(`aresta de ${from} -> ${to} criada`)
+    console.log(`aresta de ${from} -> ${to} criada`)
     salvarGrafo()
 }
 

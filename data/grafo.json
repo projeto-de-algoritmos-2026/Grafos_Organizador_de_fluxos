@@ -1,89 +1,102 @@
 {
     "edges": [
         {
-            "from": "A",
-            "id": "9765e265-a816-40d6-8370-9bd3af42e559",
-            "to": "B"
+            "from": "arranjar dinheiro",
+            "id": "529c7a50-0c57-4517-b402-a21d0932b20a",
+            "to": "pegar emprestimo"
         },
         {
-            "from": "A",
-            "id": "767b524c-7b90-4ff8-9616-abc4e70e1962",
-            "to": "C"
+            "from": "arranjar dinheiro",
+            "id": "4278ca67-272d-477f-8a52-379943803971",
+            "to": "trabalhar e juntar"
         },
         {
-            "from": "B",
-            "id": "2d5701ec-7b32-4de4-b278-811471d16b94",
-            "to": "D"
+            "from": "fazer or\u00e7amento",
+            "id": "41b153d2-281e-4eaa-b1be-d64bc5052047",
+            "to": "arranjar dinheiro "
         },
         {
-            "from": "D",
-            "id": "83c6dd16-e39f-4ffa-bf9f-8349e61ee835",
-            "to": "C"
+            "from": "fazer or\u00e7amento",
+            "id": "83c7aa3f-3b84-4d00-8d4a-de005e7277ce",
+            "to": "arranjar dinheiro"
         },
         {
-            "from": "K",
-            "id": "596283d0-ffa0-4b25-a3e3-243f54342de3",
-            "to": "B"
+            "from": "trabalhar e juntar",
+            "id": "d2105bd2-a727-44af-a162-a075762faf7c",
+            "to": "contratar construtora"
         },
         {
-            "from": "K",
-            "id": "9a9a7386-79d5-41a9-b337-8b68df041b13",
-            "to": "A"
+            "from": "pegar emprestimo",
+            "id": "5de2a041-fe2c-478c-b206-8dd00ffa500e",
+            "to": "contratar construtora"
         },
         {
-            "from": "G",
-            "to": "K",
-            "id": "7c813c90-8821-4ba2-9ee3-00883a244fe2"
+            "from": "trabalhar e juntar",
+            "id": "b12d90c7-0cae-4378-a4d3-a93a48b0723a",
+            "to": "contratar pedreiro"
         },
         {
-            "from": "B",
-            "to": "C",
-            "id": "8b4d7e06-e986-46f1-b234-7685a14842d1"
+            "from": "contratar construtora",
+            "id": "57c9a6b2-6e04-47ee-ab8b-c41a2db76cdf",
+            "to": "esperar"
         },
         {
-            "from": "G",
-            "to": "B",
-            "id": "a2d1cb3f-a8d4-4be6-a75b-35c98aca3a92"
+            "from": "pegar emprestimo",
+            "to": "contratar pedreiro",
+            "id": "7cb569b1-d107-46d5-af8a-e14a65f10d3a"
         },
         {
-            "from": "I",
-            "to": "A",
-            "id": "579a3458-6092-449d-a4dd-accf0fd7fbea"
+            "from": "contratar pedreiro",
+            "to": "comprar materiais",
+            "id": "bf834f5c-d9ee-4e0a-a467-8ffd9278e6e0"
         },
         {
-            "from": "D",
-            "to": "I",
-            "id": "c1097ef3-ef35-4db0-a62f-47cd7fef08bb"
+            "from": "comprar materiais",
+            "to": "esperar",
+            "id": "7142c4bc-9e5c-4314-bd47-51d3dbb94f9c"
+        },
+        {
+            "from": "esperar",
+            "to": "curtir a constru\u00e7\u00e3o nova",
+            "id": "c6ea8aeb-74a0-41d0-b5f6-f8f2d12caa1e"
         }
     ],
     "nodes": [
         {
-            "id": "A",
-            "label": "A"
+            "id": "arranjar dinheiro",
+            "label": "arranjar dinheiro"
         },
         {
-            "id": "B",
-            "label": "B"
+            "id": "pegar emprestimo",
+            "label": "pegar emprestimo"
         },
         {
-            "id": "C",
-            "label": "C"
+            "id": "trabalhar e juntar",
+            "label": "trabalhar e juntar"
         },
         {
-            "id": "D",
-            "label": "D"
+            "id": "fazer or\u00e7amento",
+            "label": "fazer or\u00e7amento"
         },
         {
-            "id": "K",
-            "label": "K"
+            "id": "comprar materiais",
+            "label": "comprar materiais"
         },
         {
-            "id": "G",
-            "label": "G"
+            "id": "contratar construtora",
+            "label": "contratar construtora"
         },
         {
-            "id": "I",
-            "label": "I"
+            "id": "contratar pedreiro",
+            "label": "contratar pedreiro"
+        },
+        {
+            "id": "esperar",
+            "label": "esperar"
+        },
+        {
+            "id": "curtir a constru\u00e7\u00e3o nova",
+            "label": "curtir a constru\u00e7\u00e3o nova"
         }
     ]
 }
