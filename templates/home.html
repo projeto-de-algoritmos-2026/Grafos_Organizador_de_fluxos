@@ -13,7 +13,7 @@
 
   <h1>Grafo:</h1>
   <div class="corpo">
-    
+
     <div id="grafo" class="grafo"></div>
     <div style="display: flex; gap: 16px; margin-top: 16px;">
 
@@ -21,16 +21,24 @@
         <legend>Nó</legend>
         <input type="text" id="novoNo" placeholder="Nome do nó">
         <button id="btn-no">Adicionar nó</button>
+        <p></p>
+        <input type="text" id="Del-No" placeholder="Nome do nó" list="lista-nos">
+        <button id="btn-del-no">Remover nó</button>
       </fieldset>
 
       <fieldset>
         <legend>Aresta</legend>
         <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
         <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
-
         <button id="btn-aresta">Adicionar aresta</button>
+        <p></p>
+        <input type=" text" id="Del-Aresta-o" placeholder="Origem" list="lista-nos">
+        <input type="text" id="Del-Aresta-d" placeholder="Destino" list="lista-nos">
+        <button id="btn-del-aresta">Remover aresta</button>
       </fieldset>
       <datalist id="lista-nos"></datalist>
+
+
     </div>
   </div>
   <script src="{{ url_for('static', filename='../static/js/home.js') }}"></script

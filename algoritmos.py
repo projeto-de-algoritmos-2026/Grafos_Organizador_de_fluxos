@@ -100,6 +100,6 @@ def ordenacao_topologica(grafo):
         return ordem_topologica
 
 grafo=converte_json(data)
-print(grafo)
+##print(grafo)
 ordem_top=ordenacao_topologica(grafo)
-print(ordem_top)
+##print(ordem_top)

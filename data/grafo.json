@@ -1,26 +1,6 @@
 {
     "edges": [
         {
-            "from": "arranjar dinheiro",
-            "id": "529c7a50-0c57-4517-b402-a21d0932b20a",
-            "to": "pegar emprestimo"
-        },
-        {
-            "from": "arranjar dinheiro",
-            "id": "4278ca67-272d-477f-8a52-379943803971",
-            "to": "trabalhar e juntar"
-        },
-        {
-            "from": "fazer orcamento",
-            "id": "41b153d2-281e-4eaa-b1be-d64bc5052047",
-            "to": "arranjar dinheiro"
-        },
-        {
-            "from": "fazer orcamento",
-            "id": "83c7aa3f-3b84-4d00-8d4a-de005e7277ce",
-            "to": "arranjar dinheiro"
-        },
-        {
             "from": "trabalhar e juntar",
             "id": "d2105bd2-a727-44af-a162-a075762faf7c",
             "to": "contratar construtora"
@@ -42,30 +22,21 @@
         },
         {
             "from": "pegar emprestimo",
-            "to": "contratar pedreiro",
-            "id": "7cb569b1-d107-46d5-af8a-e14a65f10d3a"
+            "id": "7cb569b1-d107-46d5-af8a-e14a65f10d3a",
+            "to": "contratar pedreiro"
         },
         {
             "from": "contratar pedreiro",
-            "to": "comprar materiais",
-            "id": "bf834f5c-d9ee-4e0a-a467-8ffd9278e6e0"
+            "id": "bf834f5c-d9ee-4e0a-a467-8ffd9278e6e0",
+            "to": "comprar materiais"
         },
         {
             "from": "comprar materiais",
-            "to": "esperar",
-            "id": "7142c4bc-9e5c-4314-bd47-51d3dbb94f9c"
-        },
-        {
-            "from": "esperar",
-            "to": "curtir a construcao nova",
-            "id": "c6ea8aeb-74a0-41d0-b5f6-f8f2d12caa1e"
+            "id": "7142c4bc-9e5c-4314-bd47-51d3dbb94f9c",
+            "to": "esperar"
         }
     ],
     "nodes": [
-        {
-            "id": "arranjar dinheiro",
-            "label": "arranjar dinheiro"
-        },
         {
             "id": "pegar emprestimo",
             "label": "pegar emprestimo"
@@ -73,10 +44,6 @@
         {
             "id": "trabalhar e juntar",
             "label": "trabalhar e juntar"
-        },
-        {
-            "id": "fazer orcamento",
-            "label": "fazer orcamento"
         },
         {
             "id": "comprar materiais",
@@ -95,8 +62,12 @@
             "label": "esperar"
         },
         {
-            "id": "curtir a construcao nova",
-            "label": "curtir a construcao nova"
+            "id": "teste1",
+            "label": "teste1"
+        },
+        {
+            "id": "teste2",
+            "label": "teste2"
         }
     ]
 }

@@ -3,6 +3,22 @@ let nodes, edges, network;
 
 let botaoNo = document.getElementById("btn-no")
 let botaoAresta = document.getElementById("btn-aresta")
+let botaoDelNo = document.getElementById("btn-del-no")
+let botaoDelAresta = document.getElementById("btn-del-aresta")
+
+
+botaoDelNo.addEventListener('click', () => {
+    let nomeNo = document.getElementById("Del-No").value;
+    removerNo(nomeNo)
+})
+
+botaoDelAresta.addEventListener('click',()=>{
+    let from = document.getElementById("Del-Aresta-o").value;
+    let to = document.getElementById("Del-Aresta-d").value;
+    removerAresta(from,to);
+
+})
+
 
 botaoNo.addEventListener('click', function () {
     let nomeNo = document.getElementById("novoNo")
@@ -22,7 +38,7 @@ function atualizarListaNos() {
         const campo = document.createElement("option")
         campo.value = no.label;
         dataList.appendChild(campo)
-        
+
     });
 }
 
@@ -39,6 +55,7 @@ async function carregarGrafo() {
 }
 
 function iniciarGrafo(visGrafo) {
+
     const container = document.getElementById('grafo');
 
 
@@ -50,27 +67,27 @@ function iniciarGrafo(visGrafo) {
     var options = {
         edges: { arrows: 'to' },
         //testando
-        nodes:{
-            shape:'box',
-            color:{
-                background:'#fffccd',
+        nodes: {
+            shape: 'box',
+            color: {
+                background: '#fffccd',
                 border: '#afafaf',
                 highlight: {
                     border: '#020202',
                     background: '#5a5a5a',
                 },
-                hover:{
-                    border:'#07080a',
+                hover: {
+                    border: '#07080a',
                 }
             },
-            font:{
+            font: {
                 color: '#000000',
             }
         }
-        
+
     };
 
-    
+
     network = new vis.Network(container, data, options);
 }
 
@@ -83,6 +100,17 @@ function adicionarNo(id, label) {
     atualizarListaNos()
 }
 
+function removerNo(id) {
+    nodes.remove({ id: id })
+    grafo01.nodes = grafo01.nodes.filter((no) => no.id !== id) // refaz a lista com os nos sem aquele que eu tirei 
+
+    grafo01.edges = grafo01.edges.filter(aresta => aresta.from !== id && aresta.to !== id);
+    console.log(`nó '${id}' removido com sucesso junto com suas arestas`)
+
+    salvarGrafo()
+    atualizarListaNos();
+}
+
 
 // diciona aresta
 function adicionarAresta(from, to) {
@@ -91,6 +119,26 @@ function adicionarAresta(from, to) {
     grafo01.edges.push(aresta);
     console.log(`aresta de ${from} -> ${to} criada`)
     salvarGrafo()
+}
+
+function removerAresta(from,to){
+    // remove do vis.js
+    const arestasParaRemover = edges.get().filter(a => // separa as que sao as removiveis 
+        a.from === from && a.to === to
+    );
+
+    edges.remove(arestasParaRemover);
+
+    // remove do grefete
+    grafo01.edges = grafo01.edges.filter(a => 
+        !(a.from === from && a.to === to)
+    );
+
+    console.log(`aresta ${from} -> ${to} removida`);
+
+    salvarGrafo();
+    
+
 }
 
 // manda salvar

@@ -5,7 +5,7 @@ app= Flask("__name__")
 
 @app.route("/")
 def home():
-    grafo=carregar_grafo()
+    #grafo=carregar_grafo()
     return render_template("home.html")
 
 # Onde o grafo eh carregado para o fetch do js
