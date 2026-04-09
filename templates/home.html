@@ -6,29 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grafo</title>
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <link rel="stylesheet" href="../static/css/home.css">
 </head>
 
 <body>
+
   <h1>Grafo:</h1>
-  <div id="grafo" style="width: 600px; height: 400px; border: 1px solid black;"></div>
-  <div style="display: flex; gap: 16px; margin-top: 16px;">
+  <div class="corpo">
+    
+    <div id="grafo" class="grafo"></div>
+    <div style="display: flex; gap: 16px; margin-top: 16px;">
 
-    <fieldset>
-      <legend>Nó</legend>
-      <input type="text" id="novoNo" placeholder="Nome do nó">
-      <button id="btn-no">Adicionar nó</button>
-    </fieldset>
+      <fieldset>
+        <legend>Nó</legend>
+        <input type="text" id="novoNo" placeholder="Nome do nó">
+        <button id="btn-no">Adicionar nó</button>
+      </fieldset>
 
-    <fieldset>
-      <legend>Aresta</legend>
-      <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
-      <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
+      <fieldset>
+        <legend>Aresta</legend>
+        <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
+        <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
 
-      <button id="btn-aresta">Adicionar aresta</button>
-    </fieldset>
-    <datalist id="lista-nos"></datalist>
+        <button id="btn-aresta">Adicionar aresta</button>
+      </fieldset>
+      <datalist id="lista-nos"></datalist>
+    </div>
   </div>
-
   <script src="{{ url_for('static', filename='../static/js/home.js') }}"></script
 </body>
 </html>

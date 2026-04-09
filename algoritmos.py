@@ -22,8 +22,8 @@ def converte_json(data):
 
 
 # PARA TESTES:to lendo o arquivo json feito para js e depois convertendo para um q o python entende
-# with open('data/grafos_js.json') as f:
-#     data=json.load(f)
+with open('data/grafo.json') as f:
+    data=json.load(f)
 
 # Funções para os algoritmos de busca
 class Fila():
@@ -73,7 +73,7 @@ def BFS(grafo, inicio):
 
 
 def ordenacao_topologica(grafo):
-    contador={no: False for no in grafo}
+    contador={no: 0 for no in grafo}
     for i in grafo:
         for v in grafo[i]:
             contador[v]+=1
@@ -98,3 +98,8 @@ def ordenacao_topologica(grafo):
     
     else: 
         return ordem_topologica
+
+grafo=converte_json(data)
+print(grafo)
+ordem_top=ordenacao_topologica(grafo)
+print(ordem_top)

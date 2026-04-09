@@ -47,10 +47,30 @@ function iniciarGrafo(visGrafo) {
 
     const data = { nodes, edges };
 
-    const options = {
-        edges: { arrows: 'to' }
+    var options = {
+        edges: { arrows: 'to' },
+        //testando
+        nodes:{
+            shape:'box',
+            color:{
+                background:'#fffccd',
+                border: '#afafaf',
+                highlight: {
+                    border: '#020202',
+                    background: '#5a5a5a',
+                },
+                hover:{
+                    border:'#07080a',
+                }
+            },
+            font:{
+                color: '#000000',
+            }
+        }
+        
     };
 
+    
     network = new vis.Network(container, data, options);
 }
 
@@ -86,3 +106,6 @@ async function salvarGrafo() {
 }
 
 init();
+
+
+

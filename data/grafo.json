@@ -11,12 +11,12 @@
             "to": "trabalhar e juntar"
         },
         {
-            "from": "fazer or\u00e7amento",
+            "from": "fazer orcamento",
             "id": "41b153d2-281e-4eaa-b1be-d64bc5052047",
-            "to": "arranjar dinheiro "
+            "to": "arranjar dinheiro"
         },
         {
-            "from": "fazer or\u00e7amento",
+            "from": "fazer orcamento",
             "id": "83c7aa3f-3b84-4d00-8d4a-de005e7277ce",
             "to": "arranjar dinheiro"
         },
@@ -57,7 +57,7 @@
         },
         {
             "from": "esperar",
-            "to": "curtir a constru\u00e7\u00e3o nova",
+            "to": "curtir a construcao nova",
             "id": "c6ea8aeb-74a0-41d0-b5f6-f8f2d12caa1e"
         }
     ],
@@ -75,8 +75,8 @@
             "label": "trabalhar e juntar"
         },
         {
-            "id": "fazer or\u00e7amento",
-            "label": "fazer or\u00e7amento"
+            "id": "fazer orcamento",
+            "label": "fazer orcamento"
         },
         {
             "id": "comprar materiais",
@@ -95,8 +95,8 @@
             "label": "esperar"
         },
         {
-            "id": "curtir a constru\u00e7\u00e3o nova",
-            "label": "curtir a constru\u00e7\u00e3o nova"
+            "id": "curtir a construcao nova",
+            "label": "curtir a construcao nova"
         }
     ]
 }
