@@ -8,7 +8,7 @@ let botaoDelNo = document.getElementById("btn-del-no")
 let botaoDelAresta = document.getElementById("btn-del-aresta")
 let botaoOrdemTop = document.getElementById("btn-ordem")
 let botaoDeBfs=document.getElementById("btn-bfs")
-
+let noSelecionado = botaoDeBfs.value
 
 botaoDelNo.addEventListener('click', () => {
     let nomeNo = document.getElementById("Del-No").value;
@@ -34,11 +34,31 @@ botaoAresta.addEventListener('click', () => {
     adicionarAresta(origemAresta.value, destinoAresta.value)
 })
 
-// botaoDeBfs.addEventListener('click', async ()=>{
-//     let noInicio=document.getElementById("btn-bfs");
-//     console.log(noInicio);
-//     const res= await fetch("/bfs")
-// })
+botaoDeBfs.addEventListener('click', async ()=>{
+    let noInicio=document.getElementById("NoInicio").value;
+    if(!noInicio){
+        alert("Digite um no")
+        return
+    }
+    const res=await fetch("/bfs",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            inicio : noInicio
+        })
+    })
+    const data= await res.json()
+    if(data.erro){
+        alert("Erroooo")
+    }
+    else{
+        console.log(data)
+        animar(data)
+    }
+    
+})
 
 botaoOrdemTop.addEventListener('click', async () =>{
     const res= await fetch("/ordem_top")
@@ -181,7 +201,6 @@ function animar(ordem) {
 
     function passo() {
         if (i >= ordem.length) return;
-
         const noAtual = ordem[i];
 
         nodes.update({

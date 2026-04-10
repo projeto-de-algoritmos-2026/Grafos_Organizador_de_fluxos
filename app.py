@@ -25,12 +25,17 @@ def get_ordem():
     ordem=ordenacao_topologica(grafo)
     return jsonify(ordem)
 
-@app.route("/bfs")
+@app.route("/bfs",methods=["GET","POST"])
 def get_bfs():
-    data=carregar_grafo()
-    grafo=converte_json(data)
-    bfs=BFS(grafo)
-    return jsonify(bfs)
+    if request.method =='POST':
+        data=carregar_grafo()
+        grafo=converte_json(data)
+        data=request.get_json()
+        inicio=data['inicio']
+        if inicio not in grafo:
+            return jsonify({"erro": "No invalido"})
+        bfs=BFS(grafo,inicio)
+        return jsonify(bfs)
 
 
 if __name__ == "__main__":
