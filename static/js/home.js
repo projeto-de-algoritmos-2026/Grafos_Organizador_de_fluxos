@@ -52,7 +52,7 @@ botaoDeBfs.addEventListener('click', async () => {
         })
     })
     const data = await res.json()
-    const copia = data
+
     if (data.erro) {
         alert("Erroooo")
     }
@@ -67,9 +67,33 @@ botaoDeBfs.addEventListener('click', async () => {
 botaoOrdemTop.addEventListener('click', async () => {
     const res = await fetch("/ordem_top")
     ordem = await res.json();
+    if (ordem.erro) {
+        alert('grafo tem ciclo')
+        return
+    }
     console.log("ordem: ", ordem);
-    animar(ordem)
+
+    await animarB(ordem)
+    atualizaOT(ordem)
 })
+
+function atualizaOT(ordem) {
+    network.setOptions({ physics: true })
+
+    ordem.forEach((no, index) => {
+        nodes.update({
+            id: no,
+            x: index * 150,
+            y: 0,
+            fixed: true
+        })
+
+    })
+
+    setTimeout(() => {
+        network.setOptions({ physics: false })
+    }, 1500)
+}
 
 function atualizarListaNos() {
     const dataList = document.getElementById("lista-nos");
@@ -107,10 +131,20 @@ function iniciarGrafo(visGrafo) {
     const data = { nodes, edges };
 
     var options = {
-        edges: { arrows: 'to' },
-        //testando
+        edges: {
+            arrows: 'to',
+            length: 180,
+            smooth: {
+                enabled: true,
+                type: "curvedCW",
+                roundness: 0.4
+            },
+            arrowStrikethrough: false
+        },
+
         nodes: {
             shape: 'box',
+            margin: 10,
             color: {
                 background: '#fffccd',
                 border: '#afafaf',
@@ -125,8 +159,14 @@ function iniciarGrafo(visGrafo) {
             font: {
                 color: '#000000',
             }
-        }
+        },
 
+        physics: {
+            enabled: true,
+            stabilization: {
+                iterations: 200
+            }
+        }
     };
 
 
@@ -211,13 +251,13 @@ function resetarAnimacao(ordem) {
     }
 
     passo()
+    return
 
 }
 function animar(ordem) {
 
     if (ordem.erro) {
         alert("errooooo");
-        console.log("erro");
         return;
     }
     let i = 0;
@@ -248,7 +288,7 @@ function animar(ordem) {
 // recebe uma lista -> json
 async function animarB(ordem) {
     await animar(ordem)
-    await new Promise(resolve=> setTimeout(resolve,2000))// espero dois segundos pra desanimar 
+    await new Promise(resolve => setTimeout(resolve, 2500))// espero dois segundos pra desanimar 
     resetarAnimacao(ordem)
 }
 

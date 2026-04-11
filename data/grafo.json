@@ -1,11 +1,6 @@
 {
     "edges": [
         {
-            "from": "trabalhar e juntar",
-            "id": "d2105bd2-a727-44af-a162-a075762faf7c",
-            "to": "contratar construtora"
-        },
-        {
             "from": "pegar emprestimo",
             "id": "5de2a041-fe2c-478c-b206-8dd00ffa500e",
             "to": "contratar construtora"
@@ -34,21 +29,6 @@
             "from": "comprar materiais",
             "id": "7142c4bc-9e5c-4314-bd47-51d3dbb94f9c",
             "to": "esperar"
-        },
-        {
-            "from": "pegar emprestimo",
-            "id": "b47ecadb-38b5-4345-8818-59c9ce00c464",
-            "to": "comprar materiais"
-        },
-        {
-            "from": "contratar construtora",
-            "to": "teste",
-            "id": "28a76518-8216-46cc-9cdd-c4d79b3ac947"
-        },
-        {
-            "from": "teste",
-            "to": "trabalhar e juntar",
-            "id": "b43ee870-11df-41bd-bf7d-8283d26192a4"
         }
     ],
     "nodes": [
@@ -75,10 +55,6 @@
         {
             "id": "esperar",
             "label": "esperar"
-        },
-        {
-            "id": "teste",
-            "label": "teste"
         }
     ]
 }
