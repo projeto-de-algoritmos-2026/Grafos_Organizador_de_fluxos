@@ -13,7 +13,7 @@ def carregar_grafo2():
         return json.load(f)
     
 def salvar_grafo(grafo,nome):
-    with open('data/grafo/'+nome+'.json', 'w') as f:
+    with open('data/grafo'+nome+'.json', 'w') as f:
         json.dump(grafo, f, indent=4)
 
 def salvar_ordem(ordem,nome):

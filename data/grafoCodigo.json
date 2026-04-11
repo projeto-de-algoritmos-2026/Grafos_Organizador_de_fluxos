@@ -1,80 +1,345 @@
 {
-  "edges": [
-    {"from":"definir ideia","id":"e1","to":"definir requisitos"},
-    {"from":"pesquisa de mercado","id":"e2","to":"definir requisitos"},
-    {"from":"definir requisitos","id":"e3","to":"especificar funcionalidades"},
-    {"from":"definir requisitos","id":"e4","to":"definir escopo"},
-    {"from":"definir escopo","id":"e5","to":"planejar sprints"},
-    {"from":"especificar funcionalidades","id":"e6","to":"desenhar arquitetura"},
-    {"from":"definir stack","id":"e7","to":"configurar ambiente dev"},
-    {"from":"desenhar arquitetura","id":"e8","to":"configurar ambiente dev"},
-    {"from":"configurar ambiente dev","id":"e9","to":"configurar repositorio"},
-    {"from":"configurar repositorio","id":"e10","to":"configurar CI/CD"},
-    {"from":"configurar ambiente dev","id":"e11","to":"criar banco de dados"},
-    {"from":"desenhar arquitetura","id":"e12","to":"modelar banco"},
-    {"from":"modelar banco","id":"e13","to":"criar banco de dados"},
-    {"from":"criar banco de dados","id":"e14","to":"implementar backend"},
-    {"from":"configurar ambiente dev","id":"e15","to":"implementar backend"},
-    {"from":"definir stack","id":"e16","to":"implementar backend"},
-    {"from":"implementar backend","id":"e17","to":"criar API"},
-    {"from":"criar API","id":"e18","to":"integrar banco"},
-    {"from":"integrar banco","id":"e19","to":"testar backend"},
-    {"from":"implementar backend","id":"e20","to":"testar backend"},
-    {"from":"configurar ambiente dev","id":"e21","to":"implementar frontend"},
-    {"from":"definir stack","id":"e22","to":"implementar frontend"},
-    {"from":"especificar funcionalidades","id":"e23","to":"prototipo UI"},
-    {"from":"prototipo UI","id":"e24","to":"implementar frontend"},
-    {"from":"implementar frontend","id":"e25","to":"integrar frontend backend"},
-    {"from":"criar API","id":"e26","to":"integrar frontend backend"},
-    {"from":"integrar frontend backend","id":"e27","to":"testes integracao"},
-    {"from":"testar backend","id":"e28","to":"testes integracao"},
-    {"from":"implementar frontend","id":"e29","to":"testes frontend"},
-    {"from":"testes frontend","id":"e30","to":"testes integracao"},
-    {"from":"testes integracao","id":"e31","to":"corrigir bugs"},
-    {"from":"corrigir bugs","id":"e32","to":"testes finais"},
-    {"from":"testes finais","id":"e33","to":"preparar deploy"},
-    {"from":"configurar CI/CD","id":"e34","to":"preparar deploy"},
-    {"from":"preparar deploy","id":"e35","to":"deploy producao"},
-    {"from":"deploy producao","id":"e36","to":"monitoramento"},
-    {"from":"monitoramento","id":"e37","to":"coletar feedback"},
-    {"from":"coletar feedback","id":"e38","to":"planejar melhorias"},
-    {"from":"planejar sprints","id":"e40","to":"implementar backend"},
-    {"from":"planejar sprints","id":"e41","to":"implementar frontend"},
-    {"from":"testes finais","id":"e42","to":"documentar sistema"},
-    {"from":"documentar sistema","id":"e43","to":"treinar equipe"},
-    {"from":"deploy producao","id":"e44","to":"treinar equipe"}
-  ],
-  "nodes": [
-    {"id":"definir ideia","label":"definir ideia"},
-    {"id":"pesquisa de mercado","label":"pesquisa de mercado"},
-    {"id":"definir requisitos","label":"definir requisitos"},
-    {"id":"especificar funcionalidades","label":"especificar funcionalidades"},
-    {"id":"definir escopo","label":"definir escopo"},
-    {"id":"planejar sprints","label":"planejar sprints"},
-    {"id":"definir stack","label":"definir stack"},
-    {"id":"desenhar arquitetura","label":"desenhar arquitetura"},
-    {"id":"configurar ambiente dev","label":"configurar ambiente dev"},
-    {"id":"configurar repositorio","label":"configurar repositorio"},
-    {"id":"configurar CI/CD","label":"configurar CI/CD"},
-    {"id":"modelar banco","label":"modelar banco"},
-    {"id":"criar banco de dados","label":"criar banco de dados"},
-    {"id":"implementar backend","label":"implementar backend"},
-    {"id":"criar API","label":"criar API"},
-    {"id":"integrar banco","label":"integrar banco"},
-    {"id":"testar backend","label":"testar backend"},
-    {"id":"implementar frontend","label":"implementar frontend"},
-    {"id":"prototipo UI","label":"prototipo UI"},
-    {"id":"integrar frontend backend","label":"integrar frontend backend"},
-    {"id":"testes frontend","label":"testes frontend"},
-    {"id":"testes integracao","label":"testes integracao"},
-    {"id":"corrigir bugs","label":"corrigir bugs"},
-    {"id":"testes finais","label":"testes finais"},
-    {"id":"preparar deploy","label":"preparar deploy"},
-    {"id":"deploy producao","label":"deploy producao"},
-    {"id":"monitoramento","label":"monitoramento"},
-    {"id":"coletar feedback","label":"coletar feedback"},
-    {"id":"planejar melhorias","label":"planejar melhorias"},
-    {"id":"documentar sistema","label":"documentar sistema"},
-    {"id":"treinar equipe","label":"treinar equipe"}
-  ]
+    "edges": [
+        {
+            "from": "definir ideia",
+            "id": "e1",
+            "to": "definir requisitos"
+        },
+        {
+            "from": "pesquisa de mercado",
+            "id": "e2",
+            "to": "definir requisitos"
+        },
+        {
+            "from": "definir requisitos",
+            "id": "e3",
+            "to": "especificar funcionalidades"
+        },
+        {
+            "from": "definir requisitos",
+            "id": "e4",
+            "to": "definir escopo"
+        },
+        {
+            "from": "definir escopo",
+            "id": "e5",
+            "to": "planejar sprints"
+        },
+        {
+            "from": "especificar funcionalidades",
+            "id": "e6",
+            "to": "desenhar arquitetura"
+        },
+        {
+            "from": "definir stack",
+            "id": "e7",
+            "to": "configurar ambiente dev"
+        },
+        {
+            "from": "desenhar arquitetura",
+            "id": "e8",
+            "to": "configurar ambiente dev"
+        },
+        {
+            "from": "configurar ambiente dev",
+            "id": "e9",
+            "to": "configurar repositorio"
+        },
+        {
+            "from": "configurar repositorio",
+            "id": "e10",
+            "to": "configurar CI/CD"
+        },
+        {
+            "from": "configurar ambiente dev",
+            "id": "e11",
+            "to": "criar banco de dados"
+        },
+        {
+            "from": "desenhar arquitetura",
+            "id": "e12",
+            "to": "modelar banco"
+        },
+        {
+            "from": "modelar banco",
+            "id": "e13",
+            "to": "criar banco de dados"
+        },
+        {
+            "from": "criar banco de dados",
+            "id": "e14",
+            "to": "implementar backend"
+        },
+        {
+            "from": "configurar ambiente dev",
+            "id": "e15",
+            "to": "implementar backend"
+        },
+        {
+            "from": "definir stack",
+            "id": "e16",
+            "to": "implementar backend"
+        },
+        {
+            "from": "implementar backend",
+            "id": "e17",
+            "to": "criar API"
+        },
+        {
+            "from": "criar API",
+            "id": "e18",
+            "to": "integrar banco"
+        },
+        {
+            "from": "integrar banco",
+            "id": "e19",
+            "to": "testar backend"
+        },
+        {
+            "from": "implementar backend",
+            "id": "e20",
+            "to": "testar backend"
+        },
+        {
+            "from": "configurar ambiente dev",
+            "id": "e21",
+            "to": "implementar frontend"
+        },
+        {
+            "from": "definir stack",
+            "id": "e22",
+            "to": "implementar frontend"
+        },
+        {
+            "from": "especificar funcionalidades",
+            "id": "e23",
+            "to": "prototipo UI"
+        },
+        {
+            "from": "prototipo UI",
+            "id": "e24",
+            "to": "implementar frontend"
+        },
+        {
+            "from": "implementar frontend",
+            "id": "e25",
+            "to": "integrar frontend backend"
+        },
+        {
+            "from": "criar API",
+            "id": "e26",
+            "to": "integrar frontend backend"
+        },
+        {
+            "from": "integrar frontend backend",
+            "id": "e27",
+            "to": "testes integracao"
+        },
+        {
+            "from": "testar backend",
+            "id": "e28",
+            "to": "testes integracao"
+        },
+        {
+            "from": "implementar frontend",
+            "id": "e29",
+            "to": "testes frontend"
+        },
+        {
+            "from": "testes frontend",
+            "id": "e30",
+            "to": "testes integracao"
+        },
+        {
+            "from": "testes integracao",
+            "id": "e31",
+            "to": "corrigir bugs"
+        },
+        {
+            "from": "corrigir bugs",
+            "id": "e32",
+            "to": "testes finais"
+        },
+        {
+            "from": "testes finais",
+            "id": "e33",
+            "to": "preparar deploy"
+        },
+        {
+            "from": "configurar CI/CD",
+            "id": "e34",
+            "to": "preparar deploy"
+        },
+        {
+            "from": "preparar deploy",
+            "id": "e35",
+            "to": "deploy producao"
+        },
+        {
+            "from": "deploy producao",
+            "id": "e36",
+            "to": "monitoramento"
+        },
+        {
+            "from": "monitoramento",
+            "id": "e37",
+            "to": "coletar feedback"
+        },
+        {
+            "from": "coletar feedback",
+            "id": "e38",
+            "to": "planejar melhorias"
+        },
+        {
+            "from": "planejar sprints",
+            "id": "e40",
+            "to": "implementar backend"
+        },
+        {
+            "from": "planejar sprints",
+            "id": "e41",
+            "to": "implementar frontend"
+        },
+        {
+            "from": "testes finais",
+            "id": "e42",
+            "to": "documentar sistema"
+        },
+        {
+            "from": "documentar sistema",
+            "id": "e43",
+            "to": "treinar equipe"
+        },
+        {
+            "from": "deploy producao",
+            "id": "e44",
+            "to": "treinar equipe"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "definir ideia",
+            "label": "definir ideia"
+        },
+        {
+            "id": "pesquisa de mercado",
+            "label": "pesquisa de mercado"
+        },
+        {
+            "id": "definir requisitos",
+            "label": "definir requisitos"
+        },
+        {
+            "id": "especificar funcionalidades",
+            "label": "especificar funcionalidades"
+        },
+        {
+            "id": "definir escopo",
+            "label": "definir escopo"
+        },
+        {
+            "id": "planejar sprints",
+            "label": "planejar sprints"
+        },
+        {
+            "id": "definir stack",
+            "label": "definir stack"
+        },
+        {
+            "id": "desenhar arquitetura",
+            "label": "desenhar arquitetura"
+        },
+        {
+            "id": "configurar ambiente dev",
+            "label": "configurar ambiente dev"
+        },
+        {
+            "id": "configurar repositorio",
+            "label": "configurar repositorio"
+        },
+        {
+            "id": "configurar CI/CD",
+            "label": "configurar CI/CD"
+        },
+        {
+            "id": "modelar banco",
+            "label": "modelar banco"
+        },
+        {
+            "id": "criar banco de dados",
+            "label": "criar banco de dados"
+        },
+        {
+            "id": "implementar backend",
+            "label": "implementar backend"
+        },
+        {
+            "id": "criar API",
+            "label": "criar API"
+        },
+        {
+            "id": "integrar banco",
+            "label": "integrar banco"
+        },
+        {
+            "id": "testar backend",
+            "label": "testar backend"
+        },
+        {
+            "id": "implementar frontend",
+            "label": "implementar frontend"
+        },
+        {
+            "id": "prototipo UI",
+            "label": "prototipo UI"
+        },
+        {
+            "id": "integrar frontend backend",
+            "label": "integrar frontend backend"
+        },
+        {
+            "id": "testes frontend",
+            "label": "testes frontend"
+        },
+        {
+            "id": "testes integracao",
+            "label": "testes integracao"
+        },
+        {
+            "id": "corrigir bugs",
+            "label": "corrigir bugs"
+        },
+        {
+            "id": "testes finais",
+            "label": "testes finais"
+        },
+        {
+            "id": "preparar deploy",
+            "label": "preparar deploy"
+        },
+        {
+            "id": "deploy producao",
+            "label": "deploy producao"
+        },
+        {
+            "id": "monitoramento",
+            "label": "monitoramento"
+        },
+        {
+            "id": "coletar feedback",
+            "label": "coletar feedback"
+        },
+        {
+            "id": "planejar melhorias",
+            "label": "planejar melhorias"
+        },
+        {
+            "id": "documentar sistema",
+            "label": "documentar sistema"
+        },
+        {
+            "id": "treinar equipe",
+            "label": "treinar equipe"
+        }
+    ]
 }
