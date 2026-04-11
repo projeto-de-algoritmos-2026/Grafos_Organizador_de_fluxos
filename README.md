@@ -11,4 +11,5 @@ Repositorio do trabalho do Modulo 1, Grafo, Da disciplina de Projeto de Algoritm
 - ver oque fazer no bfs, se vamos printar um novo grafo ou deixar do jeito que ta.
 - pensar na ideia ceritnha 
 - fazer uma especie de introdução pra nossa ideia.
-- ver uma forma de deixar os nos masi bonitinhos pq estão horriveis. 
+- ver uma forma de deixar os nos masi bonitinhos pq estão horriveis.
+  - o mais agradável possivel
