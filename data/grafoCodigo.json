@@ -214,6 +214,16 @@
             "from": "deploy producao",
             "id": "e44",
             "to": "treinar equipe"
+        },
+        {
+            "from": "definir ideia",
+            "to": "pesquisa de mercado",
+            "id": "967460bb-f25f-47a2-bbf7-6ea67890bab4"
+        },
+        {
+            "from": "definir ideia",
+            "to": "definir stack",
+            "id": "8a27303b-e32e-4887-89d3-accb792aa383"
         }
     ],
     "nodes": [

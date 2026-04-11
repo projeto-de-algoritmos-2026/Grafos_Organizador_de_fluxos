@@ -20,9 +20,7 @@ botaoDelAresta.addEventListener('click', () => {
     let from = document.getElementById("Del-Aresta-o").value;
     let to = document.getElementById("Del-Aresta-d").value;
     removerAresta(from, to);
-
 })
-
 
 botaoNo.addEventListener('click', function () {
     let nomeNo = document.getElementById("novoNo")
@@ -43,24 +41,17 @@ botaoDeBfs.addEventListener('click', async () => {
     }
     const res = await fetch(`/bfs/${nomeGrafo}`, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            inicio: noInicio
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ inicio: noInicio })
     })
     const data = await res.json()
 
     if (data.erro) {
         alert("Erroooo")
-    }
-    else {
+    } else {
         console.log(data)
         await animarB(data)
-
     }
-
 })
 
 botaoOrdemTop.addEventListener('click', async () => {
@@ -71,27 +62,16 @@ botaoOrdemTop.addEventListener('click', async () => {
         return
     }
     console.log("ordem: ", ordem);
-
     await animarB(ordem)
     atualizaOT(ordem)
 })
 
 function atualizaOT(ordem) {
     network.setOptions({ physics: true })
-
     ordem.forEach((no, index) => {
-        nodes.update({
-            id: no,
-            x: index * 150,
-            y: 0,
-            fixed: true
-        })
-
+        nodes.update({ id: no, x: index * 150, y: 0, fixed: true })
     })
-
-    setTimeout(() => {
-        network.setOptions({ physics: false })
-    }, 0)
+    setTimeout(() => { network.setOptions({ physics: false }) }, 0)
 }
 
 function atualizarListaNos() {
@@ -101,7 +81,6 @@ function atualizarListaNos() {
         const campo = document.createElement("option")
         campo.value = no.label;
         dataList.appendChild(campo)
-
     });
 }
 
@@ -109,20 +88,16 @@ async function init() {
     await carregarGrafo();
     iniciarGrafo(grafo01);
     atualizarListaNos();
-
 }
 
 async function carregarGrafo() {
     const res = await fetch(`/grafo/${nomeGrafo}`);
     grafo01 = await res.json();
     console.log("Grafo carregado", grafo01);
-
 }
 
 function iniciarGrafo(visGrafo) {
-
     const container = document.getElementById('grafo');
-
 
     nodes = new vis.DataSet(visGrafo.nodes);
     edges = new vis.DataSet(visGrafo.edges);
@@ -130,70 +105,100 @@ function iniciarGrafo(visGrafo) {
     const data = { nodes, edges };
 
     var options = {
+        // layout: {
+        //     hierarchical: {
+        //         enabled: true,
+        //         direction: 'UD',        
+        //         sortMethod: 'directed', // usa a direção das arestas pra organizar
+        //         nodeSpacing: 150,
+        //         levelSeparation: 250
+        //     }
+        // },
         edges: {
             arrows: 'to',
-            length: 180,
+            length: 300,
             smooth: {
                 enabled: true,
-                type: "curvedCW",
+                type: "dynamic",
                 roundness: 0.4
             },
-            arrowStrikethrough: false
+            arrowStrikethrough: false,
+            color: {
+                color: '#aaa8a4',
+                highlight: '#3a56d4',
+                hover: '#3a56d4',
+                inherit: false
+            },
+            width: 1.5,
+            selectionWidth: 2
         },
 
         nodes: {
             shape: 'box',
-            margin: 10,
+            margin: 20,
+            borderWidth: 2,
+            borderWidthSelected: 2,
             color: {
-                background: '#fffccd',
-                border: '#afafaf',
+                background: '#464444',
+                border: '#1a1a1a',
                 highlight: {
-                    border: '#020202',
-                    background: '#5a5a5a',
+                    border: '#3a56d4',
+                    background: '#3d3d3d',
                 },
                 hover: {
-                    border: '#07080a',
+                    border: '#555',
+                    background: '#3a3a3a',
                 }
             },
             font: {
-                color: '#000000',
+                color: '#f0ede8',
+                size: 15,
+                face: 'Inter, sans-serif'
+            },
+            shadow: {
+                enabled: true,
+                color: 'rgba(0,0,0,0.18)',
+                size: 6,
+                x: 0,
+                y: 2
             }
         },
 
         physics: {
             enabled: true,
-            stabilization: {
-                iterations: 200
+            stabilization: { iterations: 200 },
+            barnesHut: {
+                gravitationalConstant: -5000,
+                centralGravity: 0.3,
+                springLength: 150,
+                springConstant: 0.02,
+                damping: 0.2,
+                avoidOverlap:2
+
             }
         }
     };
 
-
     network = new vis.Network(container, data, options);
 }
 
-// adiciona no 
 function adicionarNo(id, label) {
     nodes.add({ id, label });
     grafo01.nodes.push({ id, label });
-    console.log(`nó ${id} ,criado com sucesso`)
+    console.log(`nó ${id} criado com sucesso`)
     salvarGrafo()
     atualizarListaNos()
 }
 
 function removerNo(id) {
     nodes.remove({ id: id })
-    grafo01.nodes = grafo01.nodes.filter((no) => no.id !== id) // refaz a lista com os nos sem aquele que eu tirei 
-
+    grafo01.nodes = grafo01.nodes.filter((no) => no.id !== id)
     grafo01.edges = grafo01.edges.filter(aresta => aresta.from !== id && aresta.to !== id);
     console.log(`nó '${id}' removido com sucesso junto com suas arestas`)
-
     salvarGrafo()
     atualizarListaNos();
 }
 
-
-// diciona aresta
 function adicionarAresta(from, to) {
     const aresta = { from, to };
     edges.add(aresta);
@@ -203,95 +208,66 @@ function adicionarAresta(from, to) {
 }
 
 function removerAresta(from, to) {
-    // remove do vis.js
-    const arestasParaRemover = edges.get().filter(a => // separa as que sao as removiveis 
-        a.from === from && a.to === to
-    );
-
+    const arestasParaRemover = edges.get().filter(a => a.from === from && a.to === to);
     edges.remove(arestasParaRemover);
-
-    // remove do grefete
-    grafo01.edges = grafo01.edges.filter(a =>
-        !(a.from === from && a.to === to)
-    );
-
+    grafo01.edges = grafo01.edges.filter(a => !(a.from === from && a.to === to));
     console.log(`aresta ${from} -> ${to} removida`);
-
     salvarGrafo();
-
-
 }
 
-// manda salvar
 async function salvarGrafo() {
     const res = await fetch(`/grafo/${nomeGrafo}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(grafo01)
     });
-
     const resultado = await res.json();
-    console.log("Grafo salvo,Resposta do servidor:", resultado);
+    console.log("Grafo salvo, Resposta do servidor:", resultado);
 }
 
 function resetarAnimacao(ordem) {
-    let i = 0;
-    function passo() {
-        if (i >= ordem.length) return;
-        const noAtual = ordem[i];
-
-        nodes.update({
-            id: noAtual,
-            color: { background: '#fffccd' }
-        });
-
-        i++;
-        setTimeout(passo, 800);
-    }
-
-    passo()
-    return
-
+    return new Promise((resolve) => {
+        let i = 0;
+        function passo() {
+            if (i >= ordem.length) { resolve(); return; }
+            nodes.update({
+                id: ordem[i],
+                color: {
+                    background: '#464444',
+                    border: '#1a1a1a'
+                }
+            });
+            i++;
+            setTimeout(passo, 600);
+        }
+        passo()
+    })
 }
+
 function animar(ordem) {
-
-    if (ordem.erro) {
-        alert("errooooo");
-        return;
-    }
+    if (ordem.erro) { alert("errooooo"); return; }
     let i = 0;
-
     return new Promise((resolve) => {
         function passo() {
-            if (i >= ordem.length) {
-                resolve();
-                return;
-            }
-            const noAtual = ordem[i];
-
+            if (i >= ordem.length) { resolve(); return; }
             nodes.update({
-                id: noAtual,
-                color: { background: 'red' }
+                id: ordem[i],
+                color: {
+                    background: '#3a56d4',
+                    border: '#2f47b8'
+                }
             });
-
             i++;
             setTimeout(passo, 800);
         }
         passo();
     })
-
-
 }
 
-
-// recebe uma lista -> json
 async function animarB(ordem) {
     await animar(ordem)
-    await new Promise(resolve => setTimeout(resolve, 2500))// espero dois segundos pra desanimar 
-    resetarAnimacao(ordem)
+    await new Promise(resolve => setTimeout(resolve, 2500))
+    await resetarAnimacao(ordem)
 }
 
 init();
-
-
-

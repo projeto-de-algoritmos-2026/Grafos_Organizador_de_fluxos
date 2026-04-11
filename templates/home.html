@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -11,43 +11,50 @@
 
 <body>
 
-  <h1>Grafo:</h1>
+  <h1>Grafo</h1>
+
   <div class="corpo">
 
-    <div id="grafo" class="grafo"></div>
-    <div style="display: flex; gap: 16px; margin-top: 16px;">
+    <div id="grafo"></div>
 
-      <fieldset>
-        <legend>Nó</legend>
-        <input type="text" id="novoNo" placeholder="Nome do nó">
-        <button id="btn-no">Adicionar nó</button>
-        <p></p>
-        <input type="text" id="Del-No" placeholder="Nome do nó" list="lista-nos">
-        <button id="btn-del-no">Remover nó</button>
-      </fieldset>
+    <div class="controles">
+
+      <div class="coluna-no">
+        <fieldset>
+          <legend>Nó</legend>
+          <input type="text" id="novoNo" placeholder="Nome do nó">
+          <button id="btn-no">Adicionar Tarefa</button>
+          <input type="text" id="Del-No" placeholder="Nome do nó" list="lista-nos">
+          <button id="btn-del-no">Remover Tarefa</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>BFS</legend>
+          <input type="text" id="NoInicio" placeholder="Nó de início" list="lista-nos">
+          <button id="btn-bfs">Iniciar BFS em tarefas</button>
+        </fieldset>
+      </div>
 
       <fieldset>
         <legend>Aresta</legend>
         <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
         <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
-        <button id="btn-aresta">Adicionar aresta</button>
-        <p></p>
-        <input type=" text" id="Del-Aresta-o" placeholder="Origem" list="lista-nos">
+        <button id="btn-aresta">Adicionar dependencia de tarefas</button>
+        <input type="text" id="Del-Aresta-o" placeholder="Origem" list="lista-nos">
         <input type="text" id="Del-Aresta-d" placeholder="Destino" list="lista-nos">
-        <button id="btn-del-aresta">Remover aresta</button>
+        <button id="btn-del-aresta">Remover dependencias de tarefas</button>
       </fieldset>
+
       <datalist id="lista-nos"></datalist>
-      
-      <button id="btn-ordem">ordenacao top</button>
+
+      <button id="btn-ordem">Ver fluxo de tarefas (O.T)</button>
+
     </div>
-    <fieldset>
-        <legend>bfs</legend>
-        <input type="text" id="NoInicio" placeholder="Escolha no nó de ínicio" list="lista-nos">
-        <button id="btn-bfs">Inicar BFS</button>
-      </fieldset>
+
   </div>
-  <!-- <h1>{{nome_grafo}}</h1> -->
-  <script> const nomeGrafo="{{nome_grafo}}"</script>
-  <script src="{{ url_for('static', filename='../static/js/home.js') }}"></script
+
+  <script>const nomeGrafo = "{{nome_grafo}}"</script>
+  <script src="{{ url_for('static', filename='../static/js/home.js') }}"></script>
+
 </body>
 </html>
