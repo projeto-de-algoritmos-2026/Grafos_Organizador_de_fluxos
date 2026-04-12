@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg:        #f5f5f0;
+  --surface:   #ffffff;
+  --border:    #e0deda;
+  --text:      #1a1a1a;
+  --text-muted:#7a7770;
+  --radius:    8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.descricao {
+  max-width: 600px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.options a {
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+button:hover {
+  border-color: #3a56d4;
+  color: #3a56d4;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #f5f5f0;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1a1a1a;
+}
+
+.options {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.options a { text-decoration: none; }
+
+.options button {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #e0deda;
+    background: #ffffff;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, transform 0.1s;
+}
+
+.options button:hover {
+    border-color: #4f6ef7;
+    color: #4f6ef7;
+}
+
+.options button:active { transform: scale(0.97); } */

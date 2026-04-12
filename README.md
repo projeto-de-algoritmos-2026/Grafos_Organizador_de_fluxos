@@ -5,16 +5,49 @@ Repositorio do trabalho do Modulo 1, Grafo, Da disciplina de Projeto de Algoritm
 ## a fazer
 
 - Fazer os diferentes grafos
-  - ~~rotas~~
-  - ~~como vai linkar na home~~
 ~~- e os grafos em si -> so fiz mais um~~
-- estilizar tudo tudo tudo
-- ver oque fazer no bfs, se vamos printar um novo grafo ou deixar do jeito que ta.
-- pensar na ideia ceritnha
 - fazer uma especie de introdução pra nossa ideia.
-- ver uma forma de deixar os nos masi bonitinhos pq estão horriveis.
-  - o mais agradável possivel
-
-## feito 11-4
 
 
+
+!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !! 
+
+Temas:
+ - Grafos1
+ - Grafos2
+ - PD
+ - D&C
+ - Greed
+ - Final 
+ 
+ !! Não coloque os nomes dos alunos no título do repositório. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!
+ 
+ (Apague essa seção)
+
+# NomedoProjeto
+
+Número da Lista: X<br>
+Conteúdo da Disciplina: XXXXXXXXXX<br>
+
+## Alunos
+|Matrícula | Aluno |
+| -- | -- |
+| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| xx/xxxxxx  |  xxxx xxxx xxxxx |
+
+## Sobre 
+Descreva os objetivos do seu projeto e como ele funciona. 
+
+## Screenshots
+Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+## Instalação 
+Linguagem: xxxxxx<br>
+Framework: (caso exista)<br>
+Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+## Uso 
+Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+## Outros 
+Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.

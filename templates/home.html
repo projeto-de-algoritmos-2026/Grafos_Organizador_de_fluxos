@@ -21,37 +21,48 @@
 
       <div class="coluna-no">
         <fieldset>
-          <legend>Nó</legend>
+          <legend>Tarefas</legend>
           <input type="text" id="novoNo" placeholder="Nome do nó">
-          <button id="btn-no">Adicionar nó</button>
+          <button id="btn-no">Adicionar tarefa (nó)</button>
           <input type="text" id="Del-No" placeholder="Nome do nó" list="lista-nos">
-          <button id="btn-del-no">Remover nó</button>
+          <button id="btn-del-no">Remover tarefa (nó)</button>
         </fieldset>
 
         <fieldset>
-          <legend>BFS</legend>
+          <legend>Iniciar ordem de execução a partir de uma tarefa (BFS)</legend>
           <input type="text" id="NoInicio" placeholder="Nó de início" list="lista-nos">
-          <button id="btn-bfs">Iniciar BFS</button>
+          <button id="btn-bfs">Iniciar</button>
           <button id="btn-restaurar" style="display: none;">Restaurar grafo</button>
         </fieldset>
       </div>
-
-      <fieldset>
-        <legend>Aresta</legend>
-        <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
-        <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
-        <button id="btn-aresta">Adicionar aresta</button>
-        <input type="text" id="Del-Aresta-o" placeholder="Origem" list="lista-nos">
-        <input type="text" id="Del-Aresta-d" placeholder="Destino" list="lista-nos">
-        <button id="btn-del-aresta">Remover aresta</button>
-      </fieldset>
-
+      <div>
+        <fieldset>
+          <legend>Dependências (arestas)</legend>
+          <input type="text" id="Aresta-o" placeholder="Origem" list="lista-nos">
+          <input type="text" id="Aresta-d" placeholder="Destino" list="lista-nos">
+          <button id="btn-aresta">Adicionar aresta</button>
+          <input type="text" id="Del-Aresta-o" placeholder="Origem" list="lista-nos">
+          <input type="text" id="Del-Aresta-d" placeholder="Destino" list="lista-nos">
+          <button id="btn-del-aresta">Remover aresta</button>
+        </fieldset>
+        <div class="ordem-top">
+          <button id="btn-ordem">Ordenação topológica</button>
+        </div>
+        
+      </div>
       <datalist id="lista-nos"></datalist>
 
-      <button id="btn-ordem">Ordenação top</button>
+      
 
     </div>
 
+  </div>
+  <div class="footer">
+    <p class="footer01">
+      Projeto da disciplina de Projeto de Algoritmos<br><br>
+      Alunos:
+      Gabriel Octacilio Vieira | Zayra Batista Moraes
+    </p>
   </div>
 
   <script>const nomeGrafo = "{{nome_grafo}}"</script>

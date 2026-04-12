@@ -329,7 +329,7 @@ function iniciarGrafo(visGrafo) {
 
         nodes: {
             shape: 'box',
-            margin: 10,
+            margin: 25,
             borderWidth: 1,
             borderWidthSelected: 2,
             color: {
@@ -346,7 +346,7 @@ function iniciarGrafo(visGrafo) {
             },
             font: {
                 color: '#f0ede8',
-                size: 13,
+                size: 35,
                 face: 'Inter, sans-serif'
             },
             shadow: {
