@@ -2,14 +2,11 @@
 
 Repositorio do trabalho do Modulo 1, Grafo, Da disciplina de Projeto de Algoritmos referente ao semestre 2026.1
 
-## a fazer
-
-- Fazer os diferentes grafos
-- terminar de preencher o readme
-
 # Organizador de fluxos
 
 Conteúdo da Disciplina: Grafos - Ordem Topologica e BFS<br>
+
+## link do vídeo: https://youtu.be/hNjD7z66Gms
 
 ## Alunos
 
